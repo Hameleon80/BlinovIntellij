@@ -1,5 +1,7 @@
 package chapter6.student;
 
+import chapter6.Util;
+
 import java.util.Objects;
 import java.util.Random;
 
@@ -20,7 +22,7 @@ public abstract class Student implements IEnrollee{
 
     //==================== Constructors ====================
     public Student() {
-        this.id=generateID();
+        this.id= Util.generateID();
     }
 
     public Student(String name, String address, double znoResult) {
@@ -136,15 +138,4 @@ public abstract class Student implements IEnrollee{
 
     @Override
     public abstract boolean expel();
-
-    //==================== Helping methods ====================
-    /**
-     * Generate random id for student.
-     *
-     * @return - random id.
-     */
-    private long generateID(){
-        Random random=new Random();
-        return random.nextLong();
-    }
 }
